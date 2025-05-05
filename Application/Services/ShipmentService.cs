@@ -18,12 +18,12 @@ namespace Application.Services
             _repository = repository;
         }
 
-        public async Task<Shipment> CreateAsync(Shipment shipment) => await _repository.CreateAsync(shipment);
-        public async Task DeleteAsync(int id) => await _repository.DeleteAsync(id);
         public async Task<IEnumerable<Shipment>> GetAllAsync(string? status, string? carrier) {
             return await _repository.GetAllAsync(status, carrier);
         }
         public async Task<Shipment> GetByIdAsync(int id) => await _repository.GetByIdAsync(id);
+        public async Task<Shipment> CreateAsync(Shipment shipment) => await _repository.CreateAsync(shipment);
         public async Task UpdateAsync(Shipment shipment) => await _repository.UpdateAsync(shipment);
+        public async Task DeleteAsync(int id) => await _repository.DeleteAsync(id);
     }
 }
